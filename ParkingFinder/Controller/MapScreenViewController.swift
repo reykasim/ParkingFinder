@@ -12,12 +12,17 @@ let carParkUrl = "https://api.transport.nsw.gov.au/v1/carpark?facility="
 
 
 class MapScreenViewController: UIViewController {
+    
+    var address:String?
 
+    @IBOutlet weak var addressLabel: UILabel!
+    
     let url = URL(string: carParkUrl + "3")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        addressLabel.text = address
     }
     
     func carParks() {

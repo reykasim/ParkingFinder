@@ -35,9 +35,27 @@ class MapScreenViewController: UIViewController {
             guard error == nil else { print(error!.localizedDescription); return }
             guard let data = data else { print("Empty data"); return }
 
-            if let str = String(data: data, encoding: .utf8) {
-                print(str)
+            if let stra = String(data: data, encoding: .utf8) {
+                print(stra)
             }
+            
+            do{
+                let welcome = try? JSONDecoder().decode(CarParkAPIModel.self, from: data )
+                // welcome
+        //        print(welcome!.zones.count)
+        //        print(welcome!.zones.)
+                // print(welcome?.zoneName)
+                // zones
+                
+                for nop in welcome!.zones{
+                    print(nop.spots)
+                }
+                
+                
+            } catch let err {
+                print("Err pop", err)
+            }
+            
         }.resume()
     }
 

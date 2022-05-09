@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct ParkingSavedModel: Codable{
-    var address: AddressModel
-    var facilityInformation : FacilityInformationModel
-    var occupancy : OccupancyModel
+    var carParkID : String
+    var savedParkingLot : String
+    var carParkZones : String
 }

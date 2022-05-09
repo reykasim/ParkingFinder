@@ -2,12 +2,20 @@
 //  OccupancyModel.swift
 //  ParkingFinder
 //
-//  Created by Lily Ngo on 5/5/22.
+//  Created by Lily Ngo on 9/5/22.
 //
 
 import Foundation
 import UIKit
 
-struct OccupancyModel: Codable{
-    var parkingTotal : String
+struct Occupancy: Codable {
+    let loop: JSONNull?
+    let total: String
+    let monthlies, openGate, transients: JSONNull?
+
+    enum CodingKeys: String, CodingKey {
+        case loop, total, monthlies
+        case openGate = "open_gate"
+        case transients
+    }
 }

@@ -11,12 +11,10 @@
 		70CDFDF12823D2FD00DECEA9 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF02823D2FD00DECEA9 /* MapScreenViewController.swift */; };
 		70CDFDF32823D33500DECEA9 /* SavedAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF22823D33500DECEA9 /* SavedAddressesViewController.swift */; };
 		70CDFDF52823D59200DECEA9 /* ParkingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF42823D59200DECEA9 /* ParkingDetailsViewController.swift */; };
-		754D89182823ACAD0099100D /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D89172823ACAD0099100D /* AddressModel.swift */; };
-		754D891A2823AE960099100D /* FacilityInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D89192823AE960099100D /* FacilityInformationModel.swift */; };
-		754D891C2823AEAD0099100D /* CarParkOccupancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D891B2823AEAD0099100D /* CarParkOccupancyModel.swift */; };
-		754D891E2823B6F20099100D /* OccupancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D891D2823B6F20099100D /* OccupancyModel.swift */; };
+		751FCE9D2829395C0066DCC3 /* CarParkAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751FCE9C2829395C0066DCC3 /* CarParkAPIModel.swift */; };
+		751FCE9F282939C90066DCC3 /* OccupancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751FCE9E282939C90066DCC3 /* OccupancyModel.swift */; };
+		751FCEA128293A190066DCC3 /* ZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751FCEA028293A190066DCC3 /* ZoneModel.swift */; };
 		754D89212823B7160099100D /* ParkingSavedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D89202823B7160099100D /* ParkingSavedModel.swift */; };
-		754D89232823B94C0099100D /* ZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D89222823B94C0099100D /* ZoneModel.swift */; };
 		75A346252828C8F6009A833C /* CarParkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A346242828C8F6009A833C /* CarParkModel.swift */; };
 		F18905AE281FF72500BA3E87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18905AD281FF72500BA3E87 /* AppDelegate.swift */; };
 		F18905B0281FF72500BA3E87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18905AF281FF72500BA3E87 /* SceneDelegate.swift */; };
@@ -31,12 +29,10 @@
 		70CDFDF02823D2FD00DECEA9 /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		70CDFDF22823D33500DECEA9 /* SavedAddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAddressesViewController.swift; sourceTree = "<group>"; };
 		70CDFDF42823D59200DECEA9 /* ParkingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewController.swift; sourceTree = "<group>"; };
-		754D89172823ACAD0099100D /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
-		754D89192823AE960099100D /* FacilityInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityInformationModel.swift; sourceTree = "<group>"; };
-		754D891B2823AEAD0099100D /* CarParkOccupancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkOccupancyModel.swift; sourceTree = "<group>"; };
-		754D891D2823B6F20099100D /* OccupancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccupancyModel.swift; sourceTree = "<group>"; };
+		751FCE9C2829395C0066DCC3 /* CarParkAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkAPIModel.swift; sourceTree = "<group>"; };
+		751FCE9E282939C90066DCC3 /* OccupancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccupancyModel.swift; sourceTree = "<group>"; };
+		751FCEA028293A190066DCC3 /* ZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneModel.swift; sourceTree = "<group>"; };
 		754D89202823B7160099100D /* ParkingSavedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSavedModel.swift; sourceTree = "<group>"; };
-		754D89222823B94C0099100D /* ZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneModel.swift; sourceTree = "<group>"; };
 		75A346242828C8F6009A833C /* CarParkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkModel.swift; sourceTree = "<group>"; };
 		F18905AA281FF72500BA3E87 /* ParkingFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F18905AD281FF72500BA3E87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,13 +69,11 @@
 		754D89162823AC7E0099100D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				754D89172823ACAD0099100D /* AddressModel.swift */,
-				754D89192823AE960099100D /* FacilityInformationModel.swift */,
-				754D891B2823AEAD0099100D /* CarParkOccupancyModel.swift */,
-				754D891D2823B6F20099100D /* OccupancyModel.swift */,
 				754D89202823B7160099100D /* ParkingSavedModel.swift */,
-				754D89222823B94C0099100D /* ZoneModel.swift */,
 				75A346242828C8F6009A833C /* CarParkModel.swift */,
+				751FCE9C2829395C0066DCC3 /* CarParkAPIModel.swift */,
+				751FCE9E282939C90066DCC3 /* OccupancyModel.swift */,
+				751FCEA028293A190066DCC3 /* ZoneModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,17 +181,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				754D891A2823AE960099100D /* FacilityInformationModel.swift in Sources */,
-				754D891E2823B6F20099100D /* OccupancyModel.swift in Sources */,
 				754D89212823B7160099100D /* ParkingSavedModel.swift in Sources */,
 				70CDFDF12823D2FD00DECEA9 /* MapScreenViewController.swift in Sources */,
 				75A346252828C8F6009A833C /* CarParkModel.swift in Sources */,
-				754D89232823B94C0099100D /* ZoneModel.swift in Sources */,
+				751FCEA128293A190066DCC3 /* ZoneModel.swift in Sources */,
 				70CDFDF32823D33500DECEA9 /* SavedAddressesViewController.swift in Sources */,
+				751FCE9F282939C90066DCC3 /* OccupancyModel.swift in Sources */,
 				70CDFDF52823D59200DECEA9 /* ParkingDetailsViewController.swift in Sources */,
+				751FCE9D2829395C0066DCC3 /* CarParkAPIModel.swift in Sources */,
 				70CDFDEF2823D14D00DECEA9 /* HomepageViewController.swift in Sources */,
-				754D89182823ACAD0099100D /* AddressModel.swift in Sources */,
-				754D891C2823AEAD0099100D /* CarParkOccupancyModel.swift in Sources */,
 				F18905B2281FF72500BA3E87 /* ViewController.swift in Sources */,
 				F18905AE281FF72500BA3E87 /* AppDelegate.swift in Sources */,
 				F18905B0281FF72500BA3E87 /* SceneDelegate.swift in Sources */,
@@ -276,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -330,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -347,6 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BXL9L9243U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ParkingFinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -374,6 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BXL9L9243U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ParkingFinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

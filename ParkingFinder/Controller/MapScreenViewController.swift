@@ -14,7 +14,12 @@ let carParkUrl = "https://api.transport.nsw.gov.au/v1/carpark?facility="
 class MapScreenViewController: UIViewController {
     
     var address:String?
+    
+    let carParkModel = CarParkModel()
+    
+    var carpark = [""]
 
+    @IBOutlet weak var carparkTableView: UITableView!
     @IBOutlet weak var addressLabel: UILabel!
     
     let url = URL(string: carParkUrl + "3")!
@@ -23,6 +28,22 @@ class MapScreenViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addressLabel.text = address
+        
+        carparkTableView.dataSource = self
+        carparkTableView.delegate = self
+        
+        // get carparks from CarParkModel
+        carParkModel.requestData {[weak self] (data: [CarParkModels]) in self?.useData (data: data)
+        }
+        
+    }
+    
+    func useData(data: [CarParkModels]) {
+        // store all carparks from CarParkModel into the tableview
+        for info in data {
+            //print(info.carParkName)
+            carpark.append(info.carParkName)
+        }
     }
     
     func carParks() {
@@ -42,7 +63,7 @@ class MapScreenViewController: UIViewController {
             do{
                 let welcome = try? JSONDecoder().decode(CarParkAPIModel.self, from: data )
                 // welcome
-        //        print(welcome!.zones.count)
+          //      print(welcome!.zones.count)
         //        print(welcome!.zones.)
                 // print(welcome?.zoneName)
                 // zones
@@ -51,12 +72,34 @@ class MapScreenViewController: UIViewController {
                     print(nop.spots)
                 }
                 
-                
             } catch let err {
                 print("Err pop", err)
             }
             
         }.resume()
     }
+}
 
+extension MapScreenViewController:UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return carpark.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = carparkTableView.dequeueReusableCell(withIdentifier: "carparkCell", for: indexPath)
+        
+        cell.textLabel?.text = carpark[indexPath.row]
+        
+        return cell
+    }
+    
+}
+
+extension MapScreenViewController:UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
 }

@@ -42,6 +42,12 @@ class CarParkModel {
     init () {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(carParkList), forKey: "PARKING")
     }
+        
+    func requestData(completion: ((_ data: [CarParkModels]) -> Void)) {
+        let data = carParkList
+        completion(data)
+    }
+    
 }
 
 

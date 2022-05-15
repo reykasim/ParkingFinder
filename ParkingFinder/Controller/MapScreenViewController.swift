@@ -120,6 +120,7 @@ extension MapScreenViewController:UITableViewDelegate {
     // selected carpark data transferred to ParkingDetailsViewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingDetailsViewController") as? ParkingDetailsViewController {
+           // print("hello")
             vc.carparkName = carpark[indexPath.row].name
             self.navigationController?.pushViewController(vc, animated: true)
         }

@@ -54,14 +54,17 @@ class JSONNull: Codable, Hashable {
     
     
     
-    func carParks(_ carParkID: String) {
+    func carParks(_ carParkID: String) -> CarParkAPIModel {
         let url = URL(string: carParkUrl + carParkID)!
+        var carParkDetails: CarParkAPIModel?
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("apikey fyQ2UwCzxYDSwJRbc58uZkwGoioNfMOs6yVj", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else { print(error!.localizedDescription); return }
             guard let data = data else { print("Empty data"); return }
@@ -69,9 +72,11 @@ class JSONNull: Codable, Hashable {
             if let stra = String(data: data, encoding: .utf8) {
                 print(stra)
             }
-            
+ 
             do{
-                let carParkDetails = try? JSONDecoder().decode(CarParkAPIModel.self, from: data )
+                carParkDetails = try! JSONDecoder().decode(CarParkAPIModel.self, from: data )
+                semaphore.signal()
+                //return carParkDetails
                 // welcome
           //      print(welcome!.zones.count)
         //        print(welcome!.zones.)
@@ -87,7 +92,10 @@ class JSONNull: Codable, Hashable {
 //                }
             }
             
+            
         }.resume()
+        semaphore.wait()
+        return carParkDetails!
     }
 
 }

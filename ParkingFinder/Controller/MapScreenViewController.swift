@@ -17,7 +17,7 @@ class MapScreenViewController: UIViewController {
     
     let carParkModel = CarParkModel()
     
-    var carpark = [""]
+    var carpark = [(ID: String, name: String)]()
 
     @IBOutlet weak var carparkTableView: UITableView!
     @IBOutlet weak var addressLabel: UILabel!
@@ -39,10 +39,12 @@ class MapScreenViewController: UIViewController {
     }
     
     func useData(data: [CarParkModels]) {
+        // clear and refresh carpark list
+        carpark.removeAll()
+        
         // store all carparks from CarParkModel into the tableview
         for info in data {
-            //print(info.carParkName)
-            carpark.append(info.carParkName)
+            carpark.append((ID: info.carParkID, name: info.carParkName))
         }
     }
     
@@ -62,11 +64,6 @@ class MapScreenViewController: UIViewController {
             
             do{
                 let welcome = try? JSONDecoder().decode(CarParkAPIModel.self, from: data )
-                // welcome
-          //      print(welcome!.zones.count)
-        //        print(welcome!.zones.)
-                // print(welcome?.zoneName)
-                // zones
                 
                 for nop in welcome!.zones{
                     print(nop.spots)
@@ -89,7 +86,7 @@ extension MapScreenViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = carparkTableView.dequeueReusableCell(withIdentifier: "carparkCell", for: indexPath)
         
-        cell.textLabel?.text = carpark[indexPath.row]
+        cell.textLabel?.text = carpark[indexPath.row].name
         
         return cell
     }
@@ -98,8 +95,12 @@ extension MapScreenViewController:UITableViewDataSource {
 
 extension MapScreenViewController:UITableViewDelegate {
     
+    // selected carpark data transferred to ParkingDetailsViewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingDetailsViewController") as? ParkingDetailsViewController {
+            vc.carparkName = carpark[indexPath.row].name
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

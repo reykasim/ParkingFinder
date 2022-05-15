@@ -12,9 +12,16 @@ import UIKit
 
 class ParkingDetailsViewController: UIViewController {
 
+    @IBOutlet weak var carparkNameLabel: UILabel!
+    
+    var carparkName = ""
+    var carparkID = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        carparkNameLabel.text = carparkName
+        
     }
 
 

@@ -26,6 +26,8 @@ struct CarParkAPIModel: Codable {
     }
 }
 
+let carParkUrl = "https://api.transport.nsw.gov.au/v1/carpark?facility="
+
 class JSONNull: Codable, Hashable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
@@ -49,4 +51,43 @@ class JSONNull: Codable, Hashable {
         var container = encoder.singleValueContainer()
         try container.encodeNil()
     }
+    
+    
+    
+    func carParks(_ carParkID: String) {
+        let url = URL(string: carParkUrl + carParkID)!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("apikey fyQ2UwCzxYDSwJRbc58uZkwGoioNfMOs6yVj", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else { print(error!.localizedDescription); return }
+            guard let data = data else { print("Empty data"); return }
+
+            if let stra = String(data: data, encoding: .utf8) {
+                print(stra)
+            }
+            
+            do{
+                let carParkDetails = try? JSONDecoder().decode(CarParkAPIModel.self, from: data )
+                // welcome
+          //      print(welcome!.zones.count)
+        //        print(welcome!.zones.)
+                // print(welcome?.zoneName)
+                // zones
+                
+                // carParkDetails.spots // gets total spots
+                
+//                for zone in carParkDetails!.zones{
+//                    print(zone.spots) //total zone spot
+                    // zone.occupancy.total // how much spots avaible
+                // zone.zone_name // zone name
+//                }
+            }
+            
+        }.resume()
+    }
+
 }

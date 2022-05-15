@@ -38,11 +38,24 @@ class MapScreenViewController: UIViewController {
         carParkModel.requestData {[weak self] (data: [CarParkModels]) in self?.useData (data: data)
         }
         
-        let coordinate0 = CLLocation(latitude: 5.0, longitude: 5.0)
-        let coordinate1 = CLLocation(latitude: 5.0, longitude: 3.0)
-        let distanceInMeters = coordinate0.distance(from: coordinate1)
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address!) { (placemarks, error) in
+            guard let placemarks = placemarks, let location = placemarks.first?.location else {  return }
+            DispatchQueue.main.async {
+                print (location.coordinate.latitude)
+                print (location.coordinate.longitude)
+                print (location.coordinate)
+                
+                let coordinate0 = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                let coordinate1 = CLLocation(latitude: -33.911137, longitude: 151.242580) // Sample coordinate of Randwick
+                
+                let distanceInKm = (coordinate0.distance(from: coordinate1))/1000
+                print ("\(distanceInKm) km")
+            }
+        }
     }
     
+    /*
     func setMapView () {
         let location = CLLocationCoordinate2D(latitude: -33.69163, longitude: 150.906022)
         let span = MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)
@@ -53,7 +66,7 @@ class MapScreenViewController: UIViewController {
         annotation.coordinate = location
         annotation.title = "Tallawong Station Car Park"
         mapView.addAnnotation(annotation)
-    }
+    } */
     
     func useData(data: [CarParkModels]) {
         // clear and refresh carpark list

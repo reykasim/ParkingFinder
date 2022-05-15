@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70CDFDEF2823D14D00DECEA9 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDEE2823D14D00DECEA9 /* HomepageViewController.swift */; };
 		70CDFDF12823D2FD00DECEA9 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF02823D2FD00DECEA9 /* MapScreenViewController.swift */; };
 		70CDFDF32823D33500DECEA9 /* SavedAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF22823D33500DECEA9 /* SavedAddressesViewController.swift */; };
 		70CDFDF52823D59200DECEA9 /* ParkingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF42823D59200DECEA9 /* ParkingDetailsViewController.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		70CDFDEE2823D14D00DECEA9 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		70CDFDF02823D2FD00DECEA9 /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		70CDFDF22823D33500DECEA9 /* SavedAddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAddressesViewController.swift; sourceTree = "<group>"; };
 		70CDFDF42823D59200DECEA9 /* ParkingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 		70CDFDED2823CC4700DECEA9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				70CDFDEE2823D14D00DECEA9 /* HomepageViewController.swift */,
 				70CDFDF02823D2FD00DECEA9 /* MapScreenViewController.swift */,
 				70CDFDF22823D33500DECEA9 /* SavedAddressesViewController.swift */,
 				70CDFDF42823D59200DECEA9 /* ParkingDetailsViewController.swift */,
@@ -189,7 +186,6 @@
 				751FCE9F282939C90066DCC3 /* OccupancyModel.swift in Sources */,
 				70CDFDF52823D59200DECEA9 /* ParkingDetailsViewController.swift in Sources */,
 				751FCE9D2829395C0066DCC3 /* CarParkAPIModel.swift in Sources */,
-				70CDFDEF2823D14D00DECEA9 /* HomepageViewController.swift in Sources */,
 				F18905B2281FF72500BA3E87 /* ViewController.swift in Sources */,
 				F18905AE281FF72500BA3E87 /* AppDelegate.swift in Sources */,
 				F18905B0281FF72500BA3E87 /* SceneDelegate.swift in Sources */,

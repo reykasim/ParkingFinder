@@ -11,27 +11,43 @@ import Foundation
 import UIKit
 import MapKit
 
+let carParkAPIModels = JSONNull()
+
+
 class ParkingDetailsViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var carparkNameLabel: UILabel!
     @IBOutlet weak var saveCarkParkButton: UIButton!
+    @IBOutlet weak var carParkSpaceLabel: UILabel!
+    @IBOutlet weak var zoneLabel: UIView!
+    //@IBOutlet weak var zoneTable: UITableViewCell!
+    @IBOutlet weak var zoneCarParkTable: UITableView!
     
     var carParkCoor = ""
     var carparkName = ""
     var carparkID = "1"
     var savedCarPark: [CarParkModels] = []
+    var Jsoncar: CarParkAPIModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         carparkNameLabel.text = carparkName
+        if (zoneCarParkTable != nil){
+            //self.zoneCarParkTable.delegate = self
+            self.zoneCarParkTable.dataSource = self
+        }
         
-        let carParkAPIModels = JSONNull()
+        // let carParkAPIModels = JSONNull()
         
         //print(carParkAPIModels.carParks("1"))
-        
+        let JSONCarPark = carParkAPIModels.carParks(carparkID)
         print(carParkAPIModels.carParks(carparkID))
+        // let JSONCarPark = carParkAPIModels.carParks(carparkID)
+        Jsoncar = carParkAPIModels.carParks(carparkID)
+        carParkSpaceLabel.text = JSONCarPark.spots
+        
         
         setMapView()
         
@@ -43,14 +59,16 @@ class ParkingDetailsViewController: UIViewController {
     }
     
     func setMapView () {
-        let location = CLLocationCoordinate2D(latitude: -33.69163, longitude: 150.906022)
+        var carCoor: String = carParkCoor
+        var carCoorArray = carCoor.components(separatedBy: ",")
+        let location = CLLocationCoordinate2D(latitude: Double(carCoorArray[0])!, longitude: Double(carCoorArray[1])!)
         let span = MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
                 
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
-        annotation.title = "Tallawong Station Car Park"
+        annotation.title = carparkName
         mapView.addAnnotation(annotation)
     }
     
@@ -89,4 +107,27 @@ class ParkingDetailsViewController: UIViewController {
 //        }
     }
 
+}
+
+extension ParkingDetailsViewController: UITableViewDataSource {
+    // Getting count of the table
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        // let carParkAPIModels = JSONNull()
+        
+        return Jsoncar!.zones.count;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Linking table to code
+        let cell = tableView.dequeueReusableCell(withIdentifier: "zoneCells", for: indexPath)
+        // Sets up labels for the table
+        let zones = Jsoncar!.zones[indexPath.row]
+        cell.textLabel?.text = zones.zoneName;
+        cell.detailTextLabel?.text = "Current available spots: \(zones.occupancy.total!)";
+        
+        // Return the cell to HighScoreTableView
+        return cell;
+        
+    }
 }

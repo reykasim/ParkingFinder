@@ -11,7 +11,6 @@ import UIKit
 struct Occupancy: Codable {
     let loop: String?
     let total: String?
-    //let total: String
     let monthlies, openGate, transients: JSONNull?
 
     enum CodingKeys: String, CodingKey {

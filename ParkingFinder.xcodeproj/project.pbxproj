@@ -10,6 +10,8 @@
 		70CDFDF12823D2FD00DECEA9 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF02823D2FD00DECEA9 /* MapScreenViewController.swift */; };
 		70CDFDF32823D33500DECEA9 /* SavedAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF22823D33500DECEA9 /* SavedAddressesViewController.swift */; };
 		70CDFDF52823D59200DECEA9 /* ParkingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDFDF42823D59200DECEA9 /* ParkingDetailsViewController.swift */; };
+		70FCAE2128395D5300359FD3 /* SavedAddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCAE1F28395D5300359FD3 /* SavedAddressesTableViewCell.swift */; };
+		70FCAE2228395D5300359FD3 /* SavedAddressesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FCAE2028395D5300359FD3 /* SavedAddressesTableViewCell.xib */; };
 		751FCE9D2829395C0066DCC3 /* CarParkAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751FCE9C2829395C0066DCC3 /* CarParkAPIModel.swift */; };
 		751FCE9F282939C90066DCC3 /* OccupancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751FCE9E282939C90066DCC3 /* OccupancyModel.swift */; };
 		751FCEA128293A190066DCC3 /* ZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751FCEA028293A190066DCC3 /* ZoneModel.swift */; };
@@ -27,6 +29,8 @@
 		70CDFDF02823D2FD00DECEA9 /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		70CDFDF22823D33500DECEA9 /* SavedAddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAddressesViewController.swift; sourceTree = "<group>"; };
 		70CDFDF42823D59200DECEA9 /* ParkingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewController.swift; sourceTree = "<group>"; };
+		70FCAE1F28395D5300359FD3 /* SavedAddressesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAddressesTableViewCell.swift; sourceTree = "<group>"; };
+		70FCAE2028395D5300359FD3 /* SavedAddressesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedAddressesTableViewCell.xib; sourceTree = "<group>"; };
 		751FCE9C2829395C0066DCC3 /* CarParkAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkAPIModel.swift; sourceTree = "<group>"; };
 		751FCE9E282939C90066DCC3 /* OccupancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccupancyModel.swift; sourceTree = "<group>"; };
 		751FCEA028293A190066DCC3 /* ZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneModel.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				F18905B6281FF72B00BA3E87 /* Assets.xcassets */,
 				F18905B8281FF72B00BA3E87 /* LaunchScreen.storyboard */,
 				F18905BB281FF72B00BA3E87 /* Info.plist */,
+				70FCAE1F28395D5300359FD3 /* SavedAddressesTableViewCell.swift */,
+				70FCAE2028395D5300359FD3 /* SavedAddressesTableViewCell.xib */,
 			);
 			path = ParkingFinder;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FCAE2228395D5300359FD3 /* SavedAddressesTableViewCell.xib in Resources */,
 				F18905BA281FF72B00BA3E87 /* LaunchScreen.storyboard in Resources */,
 				F18905B7281FF72B00BA3E87 /* Assets.xcassets in Resources */,
 				F18905B5281FF72500BA3E87 /* Main.storyboard in Resources */,
@@ -178,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FCAE2128395D5300359FD3 /* SavedAddressesTableViewCell.swift in Sources */,
 				754D89212823B7160099100D /* ParkingSavedModel.swift in Sources */,
 				70CDFDF12823D2FD00DECEA9 /* MapScreenViewController.swift in Sources */,
 				75A346252828C8F6009A833C /* CarParkModel.swift in Sources */,

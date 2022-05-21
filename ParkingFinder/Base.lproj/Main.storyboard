@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dUU-Kc-Dpr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dUU-Kc-Dpr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -167,6 +167,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Saved Addresses" id="QHz-gw-7SO"/>
+                    <connections>
+                        <outlet property="SavedAddressesTableView" destination="Uvn-nN-1S3" id="Ou1-f5-uZd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIV-gC-yj6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,22 +183,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faB-Kx-CrS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faB-Kx-CrS">
                                 <rect key="frame" x="216" y="113" width="178" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="uKC-ad-NQK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carparks near " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uO3-lv-Gx4">
-                                <rect key="frame" x="26" y="113" width="183" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carparks near " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uO3-lv-Gx4">
+                                <rect key="frame" x="91.5" y="113" width="117.5" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-Lg-Dei">
-                                <rect key="frame" x="0.0" y="143" width="414" height="719"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-Lg-Dei">
+                                <rect key="frame" x="0.0" y="180" width="414" height="682"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="carparkCell" textLabel="Vr4-BD-Jni" style="IBUITableViewCellStyleDefault" id="wyW-vi-ox5">
@@ -221,13 +225,15 @@
                         <viewLayoutGuide key="safeArea" id="6Mg-yT-EPG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="leading" secondItem="6Mg-yT-EPG" secondAttribute="leading" id="002-UT-ohp"/>
-                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="bottom" secondItem="6Mg-yT-EPG" secondAttribute="bottom" id="0Uq-0l-Ui6"/>
-                            <constraint firstItem="6Mg-yT-EPG" firstAttribute="trailing" secondItem="4mP-Lg-Dei" secondAttribute="trailing" id="Bnw-uc-XLw"/>
-                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="centerX" secondItem="Erl-6V-ZoV" secondAttribute="centerX" id="Cib-Zp-7EJ"/>
-                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="centerX" secondItem="Erl-6V-ZoV" secondAttribute="centerX" id="FRq-aC-SVx"/>
-                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="centerY" secondItem="Erl-6V-ZoV" secondAttribute="centerY" id="Glq-wl-haE"/>
-                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="centerY" secondItem="Erl-6V-ZoV" secondAttribute="centerY" id="N1i-4u-3Ny"/>
+                            <constraint firstItem="faB-Kx-CrS" firstAttribute="trailing" secondItem="Erl-6V-ZoV" secondAttribute="trailingMargin" id="6bC-ey-E5q"/>
+                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="leading" secondItem="6Mg-yT-EPG" secondAttribute="leading" id="B2x-ez-0Pe"/>
+                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="top" secondItem="faB-Kx-CrS" secondAttribute="bottom" constant="45" id="HAs-nP-FEs"/>
+                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="bottom" secondItem="6Mg-yT-EPG" secondAttribute="bottom" id="NSM-SE-Iak"/>
+                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="top" secondItem="faB-Kx-CrS" secondAttribute="bottom" constant="45" id="NwJ-rT-eZC"/>
+                            <constraint firstItem="faB-Kx-CrS" firstAttribute="top" secondItem="6Mg-yT-EPG" secondAttribute="top" constant="25" id="aep-N2-XeH"/>
+                            <constraint firstItem="faB-Kx-CrS" firstAttribute="baseline" secondItem="uO3-lv-Gx4" secondAttribute="baseline" id="ecr-e7-b2Z"/>
+                            <constraint firstItem="faB-Kx-CrS" firstAttribute="leading" secondItem="uO3-lv-Gx4" secondAttribute="trailing" constant="7" id="iLT-zH-VSr"/>
+                            <constraint firstItem="4mP-Lg-Dei" firstAttribute="trailing" secondItem="6Mg-yT-EPG" secondAttribute="trailing" id="l6f-TA-AAl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map View" id="S57-kR-OsS"/>

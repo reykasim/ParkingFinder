@@ -56,6 +56,8 @@ class ParkingDetailsViewController: UIViewController {
         } else{
             saveCarkParkButton.isEnabled = true
         }
+        
+        print("list of savedcarpark \(readHighScores())")
     }
     
     func setMapView () {
@@ -77,8 +79,6 @@ class ParkingDetailsViewController: UIViewController {
         savedCarPark.append(CarParkModels(carParkID: carparkID, carParkName: carparkName, carParkCoor: carParkCoor))
         
         UserDefaults.standard.set(try? PropertyListEncoder().encode(savedCarPark), forKey: "savedCarPark")
-        
-        print(readHighScores())
     }
     
     func readHighScores() -> [CarParkModels] {
@@ -93,7 +93,13 @@ class ParkingDetailsViewController: UIViewController {
             return []
         }
     }
-
+    
+    // let saved car park addresses be called and used in SavedAddressesViewController
+    func requestDataHere(completion: ((_ data:[CarParkModels]) -> Void)) {
+        let data = readHighScores()
+        completion(data)
+    }
+    
     @IBAction func saveCarPark(_ sender: UIButton) {
         let disableMyButton = sender as? UIButton
         disableMyButton!.isEnabled = false
@@ -106,7 +112,6 @@ class ParkingDetailsViewController: UIViewController {
 //
 //        }
     }
-
 }
 
 extension ParkingDetailsViewController: UITableViewDataSource {

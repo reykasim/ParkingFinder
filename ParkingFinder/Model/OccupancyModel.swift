@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 struct Occupancy: Codable {
-    let loop: JSONNull?
-    let total: String
+    let loop: String?
+    let total: String?
+    //let total: String
     let monthlies, openGate, transients: JSONNull?
 
     enum CodingKeys: String, CodingKey {

@@ -30,12 +30,7 @@ var carParkList = [
     CarParkModels(carParkID: "14", carParkName: "West Ryde Car Park", carParkCoor: "-33.807172,151.090229"),
     CarParkModels(carParkID: "15", carParkName: "Sutherland East Parade Car Park", carParkCoor: "-34.031787,151.05719"),
     CarParkModels(carParkID: "16", carParkName: "Leppington Car Park", carParkCoor: "-33.9544,150.8081"),
-    CarParkModels(carParkID: "17", carParkName: "Edmondson Park South Car Park", carParkCoor: "-33.9693,150.8587"),
-    CarParkModels(carParkID: "486", carParkName: "Ashfield Car Park", carParkCoor: "-33.8875506079,151.125504163"),
-    CarParkModels(carParkID: "487", carParkName: "Kogarah Car Park", carParkCoor: "-33.9621493059,151.132641462"),
-    CarParkModels(carParkID: "488", carParkName: "Seven Hills Car Park", carParkCoor: "-33.774430434,150.936513359"),
-    CarParkModels(carParkID: "489", carParkName: "Manly Vale Car Park", carParkCoor: "-33.786247,151.26671"),
-    CarParkModels(carParkID: "490", carParkName: "Brookvale Car Park", carParkCoor: "-33.767508,151.268541")
+    CarParkModels(carParkID: "17", carParkName: "Edmondson Park South Car Park", carParkCoor: "-33.9693,150.8587")
 ]
 
 class CarParkModel {

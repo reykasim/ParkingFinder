@@ -18,7 +18,7 @@ class MapScreenViewController: UIViewController {
     
     let carParkModel = CarParkModel()
     
-    var carpark = [(ID: String, name: String)]()
+    var carpark: [CarParkModels] = []
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var carparkTableView: UITableView!
@@ -74,7 +74,8 @@ class MapScreenViewController: UIViewController {
         
         // store all carparks from CarParkModel into the tableview
         for info in data {
-            carpark.append((ID: info.carParkID, name: info.carParkName))
+            carpark.append(CarParkModels(carParkID: info.carParkID, carParkName: info.carParkName, carParkCoor: info.carParkCoor))
+            // carpark.append((ID: info.carParkID, name: , coor: String))
         }
     }
     
@@ -121,7 +122,7 @@ extension MapScreenViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = carparkTableView.dequeueReusableCell(withIdentifier: "carparkCell", for: indexPath)
         
-        cell.textLabel?.text = carpark[indexPath.row].name
+        cell.textLabel?.text = carpark[indexPath.row].carParkName
         
         return cell
     }
@@ -134,7 +135,9 @@ extension MapScreenViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingDetailsViewController") as? ParkingDetailsViewController {
            // print("hello")
-            vc.carparkName = carpark[indexPath.row].name
+            vc.carparkName = carpark[indexPath.row].carParkName
+            vc.carparkID = carpark[indexPath.row].carParkID
+            vc.carParkCoor = carpark[indexPath.row].carParkCoor
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

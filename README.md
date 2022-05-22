@@ -4,7 +4,7 @@ This swift application is based around drivers who need to places to park their 
 
 This application will show the location, total carpark spaces of the building, how many builds does the carpark have and a live feed of the available carpark spaces.
 
-| Memeber's name  | Student ID | Student Email  | Contribution |
+| Group Members | Student ID | Student Email  | Contribution |
 | -------------  | ------------- | ------------- | ------------- |
 | Lily Ngo  | 13605973  | 13605973@student.uts.edu.au  | Completed: <br> • All constraints on view <br> • Created and edited all models <br> • Worked on all controllers <br> • Display of map <br> • Intergrated the API with application <br> • Implemented saved car park function <br> • Fixed bugs <br> • Worked on the view <br> • Parking details view controller <br> • README.md file <br> • Leader |
 | Reynard Kasim  | 13622840  | 13622840@student.uts.edu.au  | Completed: <br> • Designed view controller screens <br> • Linked view controller screens together <br> • Worked on presentation slides |

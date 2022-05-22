@@ -23,8 +23,10 @@ class SavedAddressesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // sets custom cell for SavedAddresses table in SavedAddressesViewController
         let nib = UINib(nibName: "SavedAddressesTableViewCell", bundle: nil)
         SavedAddressesTableView.register(nib, forCellReuseIdentifier: "SavedAddressesTableViewCell")
+        
         SavedAddressesTableView.dataSource = self
         SavedAddressesTableView.delegate = self
         

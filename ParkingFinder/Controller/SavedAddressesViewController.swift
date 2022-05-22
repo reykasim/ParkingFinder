@@ -26,6 +26,7 @@ class SavedAddressesViewController: UIViewController {
         let nib = UINib(nibName: "SavedAddressesTableViewCell", bundle: nil)
         SavedAddressesTableView.register(nib, forCellReuseIdentifier: "SavedAddressesTableViewCell")
         SavedAddressesTableView.dataSource = self
+        SavedAddressesTableView.delegate = self
         
         // get saved addresses from ParkingDetailsViewController
         parkingDetailsViewController.requestDataHere {[weak self] (data: [CarParkModels]) in self?.useInfo(data: data) }
@@ -56,10 +57,24 @@ extension SavedAddressesViewController:UITableViewDataSource {
         
         cell.carparkName.text = savedData[indexPath.row].carParkName
         cell.carparkCor.text = savedData[indexPath.row].carParkCoor
-        //cell.textLabel?.text = savedData[indexPath.row].carParkName
         
         return cell
     }
     
+    
+}
+
+extension SavedAddressesViewController:UITableViewDelegate {
+    
+    // selected carpark data transferred to ParkingDetailsViewController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingDetailsViewController") as? ParkingDetailsViewController {
+           
+            vc.carparkName = savedData[indexPath.row].carParkName
+            vc.carparkID = savedData[indexPath.row].carParkID
+            vc.carParkCoor = savedData[indexPath.row].carParkCoor
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
 }

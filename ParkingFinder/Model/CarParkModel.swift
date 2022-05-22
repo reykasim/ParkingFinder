@@ -24,7 +24,7 @@ var carParkList = [
     CarParkModels(carParkID: "7", carParkName: "Kiama Car Park", carParkCoor: "-34.672518,150.854695"),
     CarParkModels(carParkID: "9", carParkName: "Revesby Car Park", carParkCoor: "-33.95246,151.014838"),
     CarParkModels(carParkID: "10", carParkName: "Warriewood Car Park", carParkCoor: "33.697777,151.300667"),
-    CarParkModels(carParkID: "11", carParkName: "Narrabeen Car Park ", carParkCoor: " -33.713514,151.297315"),
+    CarParkModels(carParkID: "11", carParkName: "Narrabeen Car Park ", carParkCoor: "-33.713514,151.297315"),
     CarParkModels(carParkID: "12", carParkName: "Mona Vale Car Park", carParkCoor: "-33.677276,151.305146"),
     CarParkModels(carParkID: "13", carParkName: "Dee Why Car Park", carParkCoor: "-33.752797,151.286485"),
     CarParkModels(carParkID: "14", carParkName: "West Ryde Car Park", carParkCoor: "-33.807172,151.090229"),

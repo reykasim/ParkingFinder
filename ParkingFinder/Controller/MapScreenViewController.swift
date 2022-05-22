@@ -16,12 +16,10 @@ class MapScreenViewController: UIViewController {
     var carpark: [CarParkModels] = []
 
     @IBOutlet weak var carparkTableView: UITableView!
-    @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        addressLabel.text = address
         
         carparkTableView.dataSource = self
         carparkTableView.delegate = self
@@ -30,21 +28,6 @@ class MapScreenViewController: UIViewController {
         carParkModel.requestData {[weak self] (data: [CarParkModels]) in self?.useData (data: data)
         }
         
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address!) { (placemarks, error) in
-            guard let placemarks = placemarks, let location = placemarks.first?.location else {  return }
-            DispatchQueue.main.async {
-                print (location.coordinate.latitude)
-                print (location.coordinate.longitude)
-                print (location.coordinate)
-                
-                let coordinate0 = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-                let coordinate1 = CLLocation(latitude: -33.911137, longitude: 151.242580) // Sample coordinate of Randwick
-                
-                let distanceInKm = (coordinate0.distance(from: coordinate1))/1000
-                print ("\(distanceInKm) km")
-            }
-        }
     }
     
     func useData(data: [CarParkModels]) {

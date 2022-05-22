@@ -8,11 +8,13 @@
 import Foundation
 import UIKit
 
+// Model of API JSON
 struct Zone: Codable {
     let spots, zoneID: String
     let occupancy: Occupancy
     let zoneName, parentZoneID: String
 
+    // API names
     enum CodingKeys: String, CodingKey {
         case spots
         case zoneID = "zone_id"

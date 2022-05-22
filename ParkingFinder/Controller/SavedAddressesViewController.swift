@@ -70,8 +70,8 @@ extension SavedAddressesViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ParkingDetailsViewController") as? ParkingDetailsViewController {
            
-            vc.carparkName = savedData[indexPath.row].carParkName
-            vc.carparkID = savedData[indexPath.row].carParkID
+            vc.carParkName = savedData[indexPath.row].carParkName
+            vc.carParkID = savedData[indexPath.row].carParkID
             vc.carParkCoor = savedData[indexPath.row].carParkCoor
             self.navigationController?.pushViewController(vc, animated: true)
         }

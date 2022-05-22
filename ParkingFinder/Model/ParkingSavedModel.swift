@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Model of API JSON
 struct ParkingSavedModel: Codable{
     var carParkID : String
     var savedParkingLot : String

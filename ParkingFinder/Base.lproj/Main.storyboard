@@ -516,10 +516,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="carParkNameLabel" destination="LBb-v6-X4c" id="Clh-8t-fw9"/>
                         <outlet property="carParkSpaceLabel" destination="2I6-JT-pLP" id="xdh-MD-zbj"/>
-                        <outlet property="carparkNameLabel" destination="LBb-v6-X4c" id="Clh-8t-fw9"/>
                         <outlet property="mapView" destination="qdp-a2-lha" id="kj6-xr-fn4"/>
-                        <outlet property="saveCarkParkButton" destination="SwO-Ka-r0L" id="45J-2a-XoH"/>
+                        <outlet property="saveCarParkButton" destination="SwO-Ka-r0L" id="45J-2a-XoH"/>
                         <outlet property="zoneCarParkTable" destination="z1B-hG-Eq5" id="ujL-oj-iBe"/>
                         <outlet property="zoneLabel" destination="ktp-QJ-T9h" id="QXZ-Ok-bcb"/>
                     </connections>

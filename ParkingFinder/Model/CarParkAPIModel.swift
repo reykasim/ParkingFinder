@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Model of API JSON
 struct CarParkAPIModel: Codable {
     var tsn, time, spots: String
     let zones: [Zone]
@@ -15,6 +16,7 @@ struct CarParkAPIModel: Codable {
     let occupancy: Occupancy
     let messageDate, facilityID, facilityName, tfnswFacilityID: String
 
+    // API names
     enum CodingKeys: String, CodingKey {
         case tsn, time, spots, zones
         case parkID = "ParkID"
@@ -26,75 +28,69 @@ struct CarParkAPIModel: Codable {
     }
 }
 
+// API URL
 let carParkUrl = "https://api.transport.nsw.gov.au/v1/carpark?facility="
 
-class JSONNull: Codable, Hashable {
+// API functions
+class JSONModel: Codable, Hashable {
 
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
+    // API Equatable protocol
+    public static func == (lhs: JSONModel, rhs: JSONModel) -> Bool {
         return true
     }
-
+    // API cookies
     public var hashValue: Int {
         return 0
     }
 
     public init() {}
 
+    // API error handling
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
+            throw DecodingError.typeMismatch(JSONModel.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
         }
     }
 
+    // API encoding
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encodeNil()
     }
     
-    
-    
+    // Get car parks from API
     func carParks(_ carParkID: String) -> CarParkAPIModel {
+        // Varibles definition
         let url = URL(string: carParkUrl + carParkID)!
         var carParkDetails: CarParkAPIModel?
-        
         var request = URLRequest(url: url)
+        
+        // API call protocol
         request.httpMethod = "GET"
         request.addValue("apikey fyQ2UwCzxYDSwJRbc58uZkwGoioNfMOs6yVj", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
+        // Set a wait function for API call
         let semaphore = DispatchSemaphore(value: 0)
         
+        // Calling API
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else { print(error!.localizedDescription); return }
             guard let data = data else { print("Empty data"); return }
-
-            if let stra = String(data: data, encoding: .utf8) {
-                print(stra)
-            }
  
+            // Load the API data
             do{
                 carParkDetails = try! JSONDecoder().decode(CarParkAPIModel.self, from: data )
+                // Stop the wait function
                 semaphore.signal()
-                //return carParkDetails
-                // welcome
-          //      print(welcome!.zones.count)
-        //        print(welcome!.zones.)
-                // print(welcome?.zoneName)
-                // zones
-                
-                // carParkDetails.spots // gets total spots
-                
-//                for zone in carParkDetails!.zones{
-//                    print(zone.spots) //total zone spot
-                    // zone.occupancy.total // how much spots avaible
-                // zone.zone_name // zone name
-//                }
             }
             
-            
+        // Continue code after API call
         }.resume()
+        // Wait for the API data to load
         semaphore.wait()
+        // Push API data
         return carParkDetails!
     }
 

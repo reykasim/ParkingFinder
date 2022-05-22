@@ -8,11 +8,13 @@
 import Foundation
 import UIKit
 
+// Model of API JSON
 struct Occupancy: Codable {
     let loop: String?
     let total: String?
-    let monthlies, openGate, transients: JSONNull?
+    let monthlies, openGate, transients: JSONModel?
 
+    // API names
     enum CodingKeys: String, CodingKey {
         case loop, total, monthlies
         case openGate = "open_gate"

@@ -8,12 +8,13 @@
 import Foundation
 import UIKit
 
+// Model of API JSON
 struct CarParkModels: Codable{
     var carParkID : String
     var carParkName : String
     var carParkCoor : String
 }
-
+// List of available carparks
 var carParkList = [
     CarParkModels(carParkID: "1", carParkName: "Tallawong Station Car Park", carParkCoor: "-33.69163,150.906022"),
     CarParkModels(carParkID: "2", carParkName: "Kellyville Station Car Park", carParkCoor: "-33.713514,150.935304"),
@@ -33,6 +34,7 @@ var carParkList = [
     CarParkModels(carParkID: "17", carParkName: "Edmondson Park South Car Park", carParkCoor: "-33.9693,150.8587")
 ]
 
+// Save the carparks in database
 class CarParkModel {
     init () {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(carParkList), forKey: "PARKING")

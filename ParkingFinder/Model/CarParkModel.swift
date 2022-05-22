@@ -39,7 +39,8 @@ class CarParkModel {
     init () {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(carParkList), forKey: "PARKING")
     }
-        
+     
+    // saves data to be collected by MapScreenViewController
     func requestData(completion: ((_ data: [CarParkModels]) -> Void)) {
         let data = carParkList
         completion(data)

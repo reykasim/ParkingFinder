@@ -47,6 +47,7 @@ class MapScreenViewController: UIViewController {
         }
     }
     
+    // gets list of car parks from CarParkModel
     func useData(data: [CarParkModels]) {
         // clear and refresh carpark list
         carpark.removeAll()
@@ -59,15 +60,18 @@ class MapScreenViewController: UIViewController {
     
 }
 
+//sets the contents for carpark list table in MapScreenViewController
 extension MapScreenViewController:UITableViewDataSource {
     
+    // number of rows in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return carpark.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = carparkTableView.dequeueReusableCell(withIdentifier: "carparkCell", for: indexPath)
-        
+    // assigns each content for row
         cell.textLabel?.text = carpark[indexPath.row].carParkName
         
         return cell
